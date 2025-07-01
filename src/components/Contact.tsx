@@ -19,17 +19,20 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-4 text-[#0C2D48]">Let&apos;s Connect</h2>
         <p className="text-[#334E68] mb-6">Ready to launch your site or idea? Reach out and let&apos;s talk.</p>
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <form onSubmit={handleSubmit} id="contact-form" method="POST" className="space-y-4">
+        <div className="bg-white rounded-lg shadow-xl p-8">
+          <form onSubmit={handleSubmit} id="contact-form" method="POST" className="p-6 border border-[#53cdd5] border-2 rounded-lg space-y-8 shadow-lg">
             {/* Success message */}
             {state.succeeded && (
               <p className="text-center font-medium mb-4 text-[#334E68]">
                 Thank you! Your message has been sent.
               </p>
             )}
-            <input type="text" name="name" placeholder="Your Name" required className="w-full px-4 py-2 border border-gray-300 rounded focus:border-gray-400 focus:ring-0 focus:outline-none" />
-            <input type="email" name="email" placeholder="Your Email" required className="w-full px-4 py-2 border border-gray-300 rounded focus:border-gray-400 focus:ring-0 focus:outline-none" />
-            <textarea name="message" placeholder="Tell me about your project..." rows={5} required className="w-full px-4 py-2 border border-gray-300 rounded focus:border-gray-400 focus:ring-0 focus:outline-none"></textarea>
+            <label htmlFor="name" className="sr-only">Your Name</label>
+            <input type="text" name="name" placeholder="Your Name" required className="w-full px-4 py-2 border border-gray-300 rounded focus:border-[#53cdd5] focus:ring-0 focus:outline-none" />
+            <label htmlFor="email" className="sr-only">Your Email</label>
+            <input type="email" name="email" placeholder="Your Email" required className="w-full px-4 py-2 border border-gray-300 rounded focus:border-[#53cdd5] focus:ring-0 focus:outline-none" />
+            <label htmlFor="message" className="sr-only">Your Project Idea</label>
+            <textarea name="message" placeholder="Tell me about your project..." rows={5} required className="w-full px-4 py-2 border border-gray-300 rounded focus:border-[#53cdd5] focus:ring-0 focus:outline-none"></textarea>
             {!!state.errors && (
               <p className="text-center font-sans font-medium mb-4 text-gray-500">
                 An error occured with form submission. Please email me directly at{' '}
@@ -40,7 +43,7 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
                 </a>
               </p>
             )}
-            <button type="submit" className="px-6 py-3 bg-[#FF5722] text-white rounded hover:bg-[#e64a19]">Send Message</button>
+            <button type="submit" className="w-full sm:w-auto px-6 py-3 bg-[#FF5722] text-white rounded hover:bg-[#e64a19]">Send Message</button>
           </form>
         </div>
       </div>

@@ -20,7 +20,7 @@ const Hero = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_props
       <div className="flex justify-center md:justify-end">
         <a
           href="#contact"
-          className="inline-block px-6 py-3 bg-[#FF5722] text-white rounded hover:bg-[#e64a19] transition"
+          className="w-full sm:w-auto inline-block px-6 py-3 bg-[#FF5722] text-center text-white rounded hover:bg-[#e64a19] transition"
         >
           Start a Project
         </a>
