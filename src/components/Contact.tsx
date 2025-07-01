@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useForm } from '@formspree/react';
 
-const Contact = React.forwardRef<HTMLElement>((props, ref) => {
+const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_props, ref) => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID || 'test-invalidform-id');
 
   useEffect(() => {

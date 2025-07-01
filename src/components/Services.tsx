@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Services = React.forwardRef<HTMLElement>((props, ref) => (
+const Services = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_props, ref) => (
   <>
     <section id="services" ref={ref} className="scroll-mt-20 py-16 px-4 bg-[#EAF8FB] text-center">
       <div className="max-w-5xl mx-auto">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Hero = React.forwardRef<HTMLElement>((props, ref) => (
+const Hero = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_props, ref) => (
   <section
     id="home"
     ref={ref}

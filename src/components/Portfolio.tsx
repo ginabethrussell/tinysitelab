@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Portfolio = React.forwardRef<HTMLElement>((props, ref) => (
+const Portfolio = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_props, ref) => (
   <section id="portfolio" ref={ref} className="scroll-mt-20 py-16 px-4 bg-white text-center">
     <div className="max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-[var(--foreground)] mb-10">

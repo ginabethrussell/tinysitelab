@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const About = React.forwardRef<HTMLElement>((props, ref) => (
+const About = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_props, ref) => (
   <section id="about" ref={ref} className="scroll-mt-20 py-16 px-4 bg-white text-center">
     <div className="max-w-3xl mx-auto">
       <div className="flex justify-center mb-6">
