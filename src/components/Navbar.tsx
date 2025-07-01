@@ -63,11 +63,22 @@ export default function Navbar({ activeId }: { activeId: string }) {
   {mobileNavOpen && (
     <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full z-50">
       <nav className="flex flex-col items-center py-4 space-y-2">
-        <a href="#hero" className="text-[#0C2D48] hover:text-[#FF5722]" onClick={() => setMobileNavOpen(false)}>Home</a>
-        <a href="#about" className="text-[#0C2D48] hover:text-[#FF5722]" onClick={() => setMobileNavOpen(false)}>About</a>
-        <a href="#services" className="text-[#0C2D48] hover:text-[#FF5722]" onClick={() => setMobileNavOpen(false)}>Services</a>
-        <a href="#portfolio" className="text-[#0C2D48] hover:text-[#FF5722]" onClick={() => setMobileNavOpen(false)}>Portfolio</a>
-        <a href="#contact" className="text-[#0C2D48] hover:text-[#FF5722]" onClick={() => setMobileNavOpen(false)}>Contact</a>
+        {navItems.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            scroll={true}
+            className={
+              'text-base font-normal transition-colors ' +
+              (`#${activeId}` === item.href
+                ? 'text-[#FF5722] border-b-2 border-[#FF5722] pb-1'
+                : 'text-[#0C2D48] hover:text-[#FF5722]')
+            }
+            onClick={() => handleClick(item.href)}
+          >
+            {item.label}
+          </Link>
+        ))}
       </nav>
     </div>
     )}
