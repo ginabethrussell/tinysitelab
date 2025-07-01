@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const navItems = [
-  { label: 'Home', href: '#hero' },
+  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#portfolio' },
@@ -23,7 +23,6 @@ export default function Navbar({ activeId }: { activeId: string }) {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      history.replaceState(null, '', href);
     }
     setMobileNavOpen(false);
   };
@@ -43,6 +42,7 @@ export default function Navbar({ activeId }: { activeId: string }) {
               : 'text-[#0C2D48] hover:text-[#FF5722]')
           }
           onClick={() => handleClick(item.href)}
+          aria-current={(`#${activeId}` === item.href) ? "page" : undefined}
         >
           {item.label}
         </Link>
@@ -75,6 +75,7 @@ export default function Navbar({ activeId }: { activeId: string }) {
                 : 'text-[#0C2D48] hover:text-[#FF5722]')
             }
             onClick={() => handleClick(item.href)}
+            aria-current={(`#${activeId}` === item.href) ? "page" : undefined}
           >
             {item.label}
           </Link>

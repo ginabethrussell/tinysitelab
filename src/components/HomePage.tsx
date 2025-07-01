@@ -7,12 +7,26 @@ import Services from './Services';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
 import Footer from './Footer';
-import { useScrollSpy } from '../hooks/useScrollSpy';
+import { useSectionInViews } from '../hooks/useSectionInViews';
 
 export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const sectionIds = ['hero', 'about', 'services', 'portfolio', 'contact'];
-  const activeId = useScrollSpy(sectionIds);
+  const [activeId, setActiveId] = useState('home');
+
+  // Use the custom hook to get refs and inView states
+  const sectionViews = useSectionInViews();
+
+  const sectionInViews = sectionViews.map(s => s.inView);
+
+  useEffect(() => {
+    // Set activeId to the first section that is in view (from top to bottom)
+    for (const section of sectionViews) {
+      if (section.inView) {
+        setActiveId(section.id);
+        break;
+      }
+    }
+  }, [sectionInViews, sectionViews]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,22 +41,15 @@ export default function HomePage() {
     history.replaceState(null, '', '#home')
   };
 
-
   return (
     <>
-      <Header activeId={activeId} />
+      <Header activeId={activeId}/>
       <main className="font-sans scroll-smooth">
-
-        <Hero />
-
-        <About />
-
-        <Services />
-
-        <Portfolio />
-
-        <Contact />
-        
+        <Hero ref={sectionViews[0].ref}/>
+        <About ref={sectionViews[1].ref}/>
+        <Services ref={sectionViews[2].ref}/>
+        <Portfolio ref={sectionViews[3].ref}/>
+        <Contact ref={sectionViews[4].ref}/>
         {/* Scroll to Top Button */}
         {showScrollTop && (
           <button onClick={scrollToTop} className="fixed bottom-6 right-6 bg-[#FF5722] text-white p-3 rounded-full shadow-md hover:bg-[#e64a19] z-50 animate-wiggle">

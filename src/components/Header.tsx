@@ -16,7 +16,7 @@ export default function Header({ activeId }: { activeId: string }) {
           />
           <span className="text-xl font-bold text-[#0C2D48]">Tiny Site Lab</span>
         </div>
-        <Navbar activeId={activeId} />
+        <Navbar activeId={activeId}/>
       </div>
     </header>
   );

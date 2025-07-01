@@ -1,6 +1,6 @@
 # Tiny Site Lab
 
-Lightweight web tools for people on a mission. Built small. Made to matter.
+Lightweight web tools for people on a mission. Built with purpose. Small by design. Made to matter.
 
 Tiny Site Lab is a personal portfolio and services site built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and deployed with [Vercel](https://vercel.com/). It showcases project offerings for creatives, small teams, and community-focused work.
 
@@ -59,3 +59,11 @@ Open http://localhost:3000 to view it in the browser.
 ## 📬 Contact
 Built and maintained by Gina Beth Russell.
 Feel free to reach out to chat about a project.
+
+## Scroll Spy Navigation
+
+This project uses [`react-intersection-observer`](https://www.npmjs.com/package/react-intersection-observer) to implement scroll spy navigation. This package is used to detect which section of the page is currently visible in the viewport and update the navigation bar accordingly.
+
+- **Purpose:** Smoothly highlight the active navigation tab as the user scrolls or clicks through the page sections.
+- **How:** Each main section uses a ref from `react-intersection-observer` to track its visibility. The navigation bar updates based on which section is in view.
+- **Docs:** [react-intersection-observer documentation](https://react-intersection-observer.vercel.app/?path=/docs/intro--docs)

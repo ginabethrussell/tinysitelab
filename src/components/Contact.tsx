@@ -1,7 +1,8 @@
+import React from 'react';
 import { useEffect } from 'react';
 import { useForm } from '@formspree/react';
 
-export default function Contact() {
+const Contact = React.forwardRef<HTMLElement>((props, ref) => {
   const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID || 'test-invalidform-id');
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function Contact() {
   }, [state.succeeded]);
 
   return (
-    <section id="contact" className="scroll-mt-20 py-16 px-4 bg-[#EAF8FB] text-center">
+    <section id="contact" ref={ref} className="scroll-mt-20 py-16 px-4 bg-[#EAF8FB] text-center">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-4 text-[#0C2D48]">Let&apos;s Connect</h2>
         <p className="text-[#334E68] mb-6">Ready to launch your site or idea? Reach out and let&apos;s talk.</p>
@@ -45,4 +46,7 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+});
+
+Contact.displayName = 'Contact';
+export default Contact;
