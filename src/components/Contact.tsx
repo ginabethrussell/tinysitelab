@@ -81,7 +81,7 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
 
   return (
     <section id="contact" ref={ref} className="scroll-mt-20 py-16 px-4 bg-[#EAF8FB] text-center">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-4 text-[#0C2D48]">Let&apos;s Connect</h2>
         <p className="text-[#334E68] mb-6">Ready to launch your site or idea? Reach out and let&apos;s talk.</p>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">

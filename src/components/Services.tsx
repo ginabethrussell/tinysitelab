@@ -2,8 +2,8 @@ import React from 'react';
 
 const Services = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_props, ref) => (
   <>
-    <section id="services" ref={ref} className="scroll-mt-20 py-16 px-4 bg-[#EAF8FB] text-center">
-      <div className="max-w-5xl mx-auto">
+    <section id="services" ref={ref} className="scroll-mt-20 pt-16 px-4 bg-[#EAF8FB] text-center">
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-10 text-[#0C2D48]">Services</h2>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="p-6 bg-white rounded shadow transform transition duration-500 ease-in-out hover:-translate-y-2 hover:shadow-lg">
