@@ -65,21 +65,26 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (validate()) {
-      const form= new FormData();
-      form.append("name", values.name)
-      form.append("email", values.email)
-      form.append("message", values.message)
-      const spamMsg = checkSpam(values);
-      if (spamMsg) {
-        setSpamError(spamMsg);
-        return;
-      }
-      await formspreeHandleSubmit(form);
-      if (state.succeeded) {
-        toast.success('Thank you! Your message has been sent.');
-        setValues({ name: '', email: '', message: '' })
-      }
+    console.log("calling validate")
+    const isValid = validate();
+    if (!isValid) {
+      setTouched({name: true, email: true, message: true})
+      return;
+    }
+    
+    const form= new FormData();
+    form.append("name", values.name)
+    form.append("email", values.email)
+    form.append("message", values.message)
+    const spamMsg = checkSpam(values);
+    if (spamMsg) {
+      setSpamError(spamMsg);
+      return;
+    }
+    await formspreeHandleSubmit(form);
+    if (state.succeeded) {
+      toast.success('Thank you! Your message has been sent.');
+      setValues({ name: '', email: '', message: '' })
     }
   };
 
