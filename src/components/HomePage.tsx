@@ -52,7 +52,7 @@ export default function HomePage() {
         <Contact ref={sectionViews[4].ref}/>
         {/* Scroll to Top Button */}
         {showScrollTop && (
-          <button onClick={scrollToTop} className="fixed bottom-6 right-6 bg-[#FF5722] text-white p-3 rounded-full shadow-md hover:bg-[#e64a19] z-50 animate-wiggle">
+          <button onClick={scrollToTop} className="fixed bottom-6 right-6 bg-[#FF5722] text-white p-3 rounded-full shadow-md hover:bg-[#e64a19] z-50 animate-bounce">
             ↑
           </button>
         )}

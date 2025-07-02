@@ -154,7 +154,7 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
           </div>
           <div className="bg-white rounded-lg shadow-xl p-8 md:text-center">
             <h3 className="text-xl font-regular text-[#0C2D48] mb-4 font-sans text-left">
-              <span className="text-3xl align-middle mr-2">🧑‍🔬</span>
+              <span role="img" aria-label="scientist" className="text-3xl align-middle mr-2">🧑‍🔬</span>
               Contact Us
             </h3>
             <div className="space-y-4 text-gray-700 font-sans">
@@ -192,19 +192,23 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
                   tinysite.lab.com
                 </a>
               </p>
-              <div className="flex justify-end">
+              <div className="flex justify-center">
                 <Image
                   src="/beaker.png"
                   alt="Tiny Site Lab Logo"
                   width={100}
                   height={100}
-                  className="w-auto animate-wobble"
+                  className="w-auto"
                   priority
                 />
               </div>
             </div>
           </div>
         </div>
+        <p className="mt-8 text-sm italic text-gray-600 text-center max-w-xl mx-auto">
+            <span role="img" aria-label="beaker" className="text-lg align-middle mr-2">🔬</span>
+            Tiny Site Lab&apos;s science vibe is inspired by my science beginnings — because every great website starts with a little experiment!
+        </p>
       </div>
     </section>
   );
