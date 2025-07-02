@@ -53,3 +53,11 @@ html, body {
 .animate-wiggle {
   animation: wiggle 0.8s ease-in-out infinite;
 }
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+.animate-wobble {
+  animation: wobble 1s infinite;
+}
