@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { useForm } from '@formspree/react';
 import { checkSpam } from '../utils/checkSpam';
+import { Toaster, toast } from 'react-hot-toast';
 
 const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_props, ref) => {
   const [state, formspreeHandleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID || 'test-invalidform-id');
@@ -65,7 +66,6 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
-      // Only call Formspree's handleSubmit if validation passes
       const form= new FormData();
       form.append("name", values.name)
       form.append("email", values.email)
@@ -76,6 +76,10 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
         return;
       }
       await formspreeHandleSubmit(form);
+      if (state.succeeded) {
+        toast.success('Thank you! Your message has been sent.');
+        setValues({ name: '', email: '', message: '' })
+      }
     }
   };
 
@@ -86,13 +90,7 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
         <p className="text-[#334E68] mb-6">Ready to launch your site or idea? Reach out and let&apos;s talk.</p>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
           <div className="bg-white rounded-lg shadow-xl p-8">
-            <form onSubmit={onSubmit} id="contact-form" method="POST" className="p-6 border border-[#53cdd5] border-2 rounded-lg space-y-6 shadow-lg">
-              {/* Success message */}
-              {state.succeeded && (
-                <p className="text-center font-medium mb-4 text-[#334E68]">
-                  Thank you! Your message has been sent.
-                </p>
-              )}
+            <form onSubmit={onSubmit} id="contact-form" method="POST" noValidate className="p-6 border border-[#53cdd5] border-2 rounded-lg space-y-6 shadow-lg">
               <div>
                 <label htmlFor="name" className="sr-only">Your Name</label>
                 <input
@@ -143,7 +141,7 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
                 <p className="text-center font-sans font-medium mb-4 text-gray-500">
                     An error occured with form submission. Please email me directly at{' '}
                   <a className="text-[#FF5722] hover:text-[#e64a19]"
-                    href="mailto:ginabeth@tinysitelab.com?subject=TinySiteLab%20Information%20Request"
+                    href="mailto:ginabeth@tinysitelab.com?subject=Website%20Design%20Inquiry"
                   >
                     ginabeth@tinysitelab.com
                   </a>
@@ -210,6 +208,22 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
             Tiny Site Lab&apos;s science vibe is inspired by my science beginnings — because every great website starts with a little experiment!
         </p>
       </div>
+      <Toaster
+        toastOptions={{
+          style: {
+            background: '#FFFFFF',
+            color: '#0C2D48',
+            border: '1px solid #53cdd5',
+            fontWeight: 'semibold',
+          },
+          success: {
+            iconTheme: {
+              primary: '#53cdd5',
+              secondary: '#FF5722',
+            },
+          },
+        }}
+      />
     </section>
   );
 });
