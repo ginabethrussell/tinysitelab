@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Portfolio = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_props, ref) => (
   <section id="portfolio" ref={ref} className="scroll-mt-20 py-16 px-4 bg-white text-center">
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-[var(--foreground)] mb-10">
+      <h2 className="text-3xl font-bold text-[#0C2D48] mb-10">
         Sample Projects <span role="img" aria-label="folder">📁</span>
       </h2>
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-left">
