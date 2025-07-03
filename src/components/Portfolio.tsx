@@ -10,7 +10,7 @@ const Portfolio = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-left">
         {/* Minister Connect */}
         <div className="border border-orange-100 rounded-xl p-6 shadow-sm hover:shadow-md transition bg-[#EAF8FB]">
-          <h3 className="font-semibold text-lg mb-2 text-[var(--foreground)] flex items-center gap-2">
+          <h3 className="font-semibold text-lg mb-2 text-[#0C2D48] flex items-center gap-2">
             <span className="text-orange-500">🧑‍💼</span> Minister Connect
           </h3>
           <p className="text-gray-600 text-sm mb-4">
@@ -28,7 +28,7 @@ const Portfolio = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_
         </div>
         {/* WanderSync */}
         <div className="border border-orange-100 rounded-xl p-6 shadow-sm hover:shadow-md transition bg-[#EAF8FB]">
-          <h3 className="font-semibold text-lg mb-2 text-[var(--foreground)] flex items-center gap-2">
+          <h3 className="font-semibold text-lg mb-2 text-[#0C2D48] flex items-center gap-2">
             <span className="text-orange-500">🗺️</span> WanderSync
           </h3>
           <p className="text-gray-600 text-sm mb-4">
@@ -46,7 +46,7 @@ const Portfolio = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_
         </div>
         {/* Moments Captured */}
         <div className="border border-orange-100 rounded-xl p-6 shadow-sm hover:shadow-md transition bg-[#EAF8FB]">
-          <h3 className="font-semibold text-lg mb-2 text-[var(--foreground)] flex items-center gap-2">
+          <h3 className="font-semibold text-lg mb-2 text-[#0C2D48] flex items-center gap-2">
             <span className="text-orange-500">📸</span> Photography Template
           </h3>
           <p className="text-gray-600 text-sm mb-4">
