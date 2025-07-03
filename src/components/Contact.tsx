@@ -107,7 +107,7 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
                   onChange={handleChange}
                   onBlur={handleBlur}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:border-[#53cdd5] focus:ring-0 focus:outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded focus:border-[#53cdd5] focus:ring-0 focus:outline-none placeholder-gray-500"
                 />
                 {touched.name && errors.name && <p className="mt-1 text-sm text-left text-[#FF5722]">{errors.name}</p>}
               </div>
@@ -122,7 +122,7 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
                   onChange={handleChange}
                   onBlur={handleBlur}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:border-[#53cdd5] focus:ring-0 focus:outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded focus:border-[#53cdd5] focus:ring-0 focus:outline-none placeholder-gray-500"
                 />
                 {touched.email && errors.email && <p className="mt-1 text-sm text-left text-[#FF5722]">{errors.email}</p>}
               </div>
@@ -137,7 +137,7 @@ const Contact = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((_pr
                   onBlur={handleBlur}
                   rows={5}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:border-[#53cdd5] focus:ring-0 focus:outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 rounded focus:border-[#53cdd5] focus:ring-0 focus:outline-none placeholder-gray-500"
                 />
                   {touched.message && errors.message && <p className="mt-1 text-sm text-left text-[#FF5722]">{errors.message}</p>}
                   {spamError && <p className="mt-1 text-sm text-left text-[#FF5722]">{spamError}</p>}
