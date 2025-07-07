@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "./Navbar";
 
-export default function Header({ activeId }: { activeId: string }) {
+export default function Header({ activeId, setActiveId }: { activeId: string; setActiveId: React.Dispatch<React.SetStateAction<string>> }) {
   return (
     <header className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
       <div className="min-h-20 max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -16,7 +16,7 @@ export default function Header({ activeId }: { activeId: string }) {
           />
           <span className="text-xl font-bold text-[#0C2D48]">Tiny Site Lab</span>
         </div>
-        <Navbar activeId={activeId}/>
+        <Navbar activeId={activeId} setActiveId={setActiveId}/>
       </div>
     </header>
   );

@@ -9,7 +9,7 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
-export default function Navbar({ activeId }: { activeId: string }) {
+export default function Navbar({ activeId, setActiveId }: { activeId: string; setActiveId: React.Dispatch<React.SetStateAction<string>> }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => { 
@@ -23,6 +23,9 @@ export default function Navbar({ activeId }: { activeId: string }) {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+      // Manual override to make Safari behave
+      setActiveId(id);
+      history.replaceState(null, '', `#${id}`);
     }
     setMobileNavOpen(false);
   };

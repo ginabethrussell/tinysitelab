@@ -43,7 +43,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Header activeId={activeId}/>
+      <Header activeId={activeId} setActiveId={setActiveId}/>
       <main className="font-sans scroll-smooth">
         <Hero ref={sectionViews[0].ref}/>
         <About ref={sectionViews[1].ref}/>
