@@ -62,7 +62,7 @@ export default function ContactToast() {
                     <p className="mt-1">
                       Please contact me at{" "}
                       <a
-                        href="mailto:ginabeth@tinysitelab.com"
+                        href="mailto:ginabeth@tinysitelab.com?subject=HELP!%20My%20Form%20Submission%20Inquiry%20Failed"
                         className="text-blue-600 hover:underline"
                       >
                         ginabeth@tinysitelab.com
