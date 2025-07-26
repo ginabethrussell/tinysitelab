@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
+import ContactToast from "./ContactToast";
 import Hero from "./Hero";
 import About from "./About";
 import Services from "./Services";
@@ -45,6 +46,7 @@ export default function HomePage() {
   return (
     <>
       <Header activeId={activeId} setActiveId={setActiveId} />
+      <ContactToast />
       <main className="font-sans scroll-smooth">
         <Hero ref={sectionViews[0].ref} />
         <About ref={sectionViews[1].ref} />
