@@ -102,7 +102,7 @@ const Portfolio = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>(
               {/* Link row – pushed to bottom, aligned right */}
               <div className="mt-auto flex justify-end">
                 <a
-                  href="https:/momentscapturedbyhannah.com"
+                  href="https://momentscapturedbyhannah.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-medium text-orange-600 hover:text-orange-700 transition"
